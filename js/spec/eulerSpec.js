@@ -1,9 +1,17 @@
 //Euler spec
+<<<<<<< HEAD
 describe('Sum of Multiples of 3 and 5', function() {
   it('Should sum the mutliples of 3 and 5 under a value', function(){
     expect(multiples(10)).to.eql(23);
     expect(multiples(1000)).to.eql(233168);
   });  
+=======
+describe('Largest prime factor', function() {
+  it('Should find the largest prime factor', function() {
+    expect(largestPrimeFactor(13195)).to.be(29);
+    //expect(largestPrimeFactor(600851475143)).to.be(29);
+  });
+>>>>>>> 23e1cee... Created super slow solver. Doesn't accept huge nums
 });
 
 describe('Even Fibonacci numbers', function() {
@@ -12,3 +20,13 @@ describe('Even Fibonacci numbers', function() {
     expect(evenFibs(4000000)).to.be(4613732);
   });
 });
+
+describe('Sum of Multiples of 3 and 5', function() {
+  it('Should sum the mutliples of 3 and 5 under a value', function(){
+    expect(multiples(10)).to.eql(23);
+    expect(multiples(1000)).to.eql(233168);
+  });  
+});
+
+
+
