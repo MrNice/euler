@@ -2,9 +2,11 @@
 //Largest Prime Factor
 //FIRST, SLOW ATTEMPT
 var generatePrimes = function(max) {
-  var range = _.range(2, max);
-  var primes = [];
+  //TODO: test this function
+  var range = _.range(3, max, 2);
+  var primes = [2];
   var largest = 0;
+
   while(range.length > 1) {
     var testnum = range.shift();
     primes.push(testnum);
@@ -12,6 +14,7 @@ var generatePrimes = function(max) {
       return x % testnum === 0;
     });
   }
+
   return primes;
 }
   
@@ -22,7 +25,7 @@ var largestPrimeFactor = function(number) {
     return number % num === 0;
   });
 }
-
+//Second attempt
 largestPrimeFactor = function(number) {
   var primes = generatePrimes(10000);
   var i;
