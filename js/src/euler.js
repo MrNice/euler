@@ -2,7 +2,7 @@
 //Largest Prime Factor
 //FIRST, SLOW ATTEMPT
 var generatePrimes = function(max) {
-  var range = _.range(2, Math.sqrt(max));
+  var range = _.range(2, max);
   var primes = [];
   var largest = 0;
   while(range.length > 1) {
@@ -21,6 +21,26 @@ var largestPrimeFactor = function(number) {
   return _(primes).find(function(num) {
     return number % num === 0;
   });
+}
+
+largestPrimeFactor = function(number) {
+  var primes = generatePrimes(10000);
+  var i;
+
+  var removePrimes = function(bignum){
+    i = primes.shift();
+    if(bignum === i) {
+      return i;
+    } else if(bignum % i === 0){
+      console.log('Factor found: ' + i.toString());
+      primes.unshift(i);
+      return removePrimes(bignum / i);
+    } else {
+      return removePrimes(bignum);
+    } 
+  }
+  
+  return removePrimes(number);
 }
 
 //Solution 2
